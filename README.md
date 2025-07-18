@@ -67,7 +67,7 @@ Feel free to fork, modify, and contribute!
 
 ---
 
-# Ignore, its just tags
+## Ignore, its just tags
 windows batch-script cpp c++ vcredist microsoft-visual-c++ redistributables installer automation silent-install setup windows-utilities development-tools system-setup dependency-installer
 
 ## 🔎 Keywords
