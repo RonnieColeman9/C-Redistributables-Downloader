@@ -1,0 +1,79 @@
+@echo off
+SETLOCAL
+
+title Package Install for C++ 
+
+REM Define the temporary directory
+SET "TEMP_DIR=%TEMP%"
+
+REM --- Download C++ Redistributables ---
+
+REM vcredist 2005
+echo Downloading vcredist2005_x86.exe...
+curl -L "https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x86.EXE" -o "%TEMP_DIR%\vcredist2005_x86.exe"
+echo Downloading vcredist2005_x64.exe...
+curl -L "https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x64.EXE" -o "%TEMP_DIR%\vcredist2005_x64.exe"
+
+REM vcredist 2008
+echo Downloading vcredist2008_x86.exe...
+curl -L "https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x86.exe" -o "%TEMP_DIR%\vcredist2008_x86.exe"
+echo Downloading vcredist2008_x64.exe...
+curl -L "https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x64.exe" -o "%TEMP_DIR%\vcredist2008_x64.exe"
+
+REM vcredist 2010
+echo Downloading vcredist2010_x86.exe...
+curl -L "https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe" -o "%TEMP_DIR%\vcredist2010_x86.exe"
+echo Downloading vcredist2010_x64.exe...
+curl -L "https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe" -o "%TEMP_DIR%\vcredist2010_x64.exe"
+
+REM vcredist 2012
+echo Downloading vcredist2012_x86.exe...
+curl -L "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe" -o "%TEMP_DIR%\vcredist2012_x86.exe"
+echo Downloading vcredist2012_x64.exe...
+curl -L "https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe" -o "%TEMP_DIR%\vcredist2012_x64.exe"
+
+REM vcredist 2013
+echo Downloading vcredist2013_x86.exe...
+curl -L "https://aka.ms/highdpimfc2013x86enu" -o "%TEMP_DIR%\vcredist2013_x86.exe"
+echo Downloading vcredist2013_x64.exe...
+curl -L "https://aka.ms/highdpimfc2013x64enu" -o "%TEMP_DIR%\vcredist2013_x64.exe"
+
+REM vcredist 2015-2022
+echo Downloading vcredist2015_2017_2019_2022_x86.exe...
+curl -L "https://aka.ms/vs/17/release/vc_redist.x86.exe" -o "%TEMP_DIR%\vcredist2015_2017_2019_2022_x86.exe"
+echo Downloading vcredist2015_2017_2019_2022_x64.exe...
+curl -L "https://aka.ms/vs/17/release/vc_redist.x64.exe" -o "%TEMP_DIR%\vcredist2015_2017_2019_2022_x64.exe"
+
+REM --- Start C++ Installers ---
+
+echo.
+echo Starting C++ Redistributable installations...
+
+REM vcredist 2005
+start /wait "" "%TEMP_DIR%\vcredist2005_x86.exe" /q
+start /wait "" "%TEMP_DIR%\vcredist2005_x64.exe" /q
+
+REM vcredist 2008
+start /wait "" "%TEMP_DIR%\vcredist2008_x86.exe" /qb
+start /wait "" "%TEMP_DIR%\vcredist2008_x64.exe" /qb
+
+REM vcredist 2010
+start /wait "" "%TEMP_DIR%\vcredist2010_x86.exe" /passive /norestart
+start /wait "" "%TEMP_DIR%\vcredist2010_x64.exe" /passive /norestart
+
+REM vcredist 2012
+start /wait "" "%TEMP_DIR%\vcredist2012_x86.exe" /passive /norestart
+start /wait "" "%TEMP_DIR%\vcredist2012_x64.exe" /passive /norestart
+
+REM vcredist 2013
+start /wait "" "%TEMP_DIR%\vcredist2013_x86.exe" /passive /norestart
+start /wait "" "%TEMP_DIR%\vcredist2013_x64.exe" /passive /norestart
+
+REM vcredist 2015-2022
+start /wait "" "%TEMP_DIR%\vcredist2015_2017_2019_2022_x86.exe" /passive /norestart
+start /wait "" "%TEMP_DIR%\vcredist2015_2017_2019_2022_x64.exe" /passive /norestart
+
+echo.
+echo All C++ Redistributable installations attempted.
+ENDLOCAL
+pause
