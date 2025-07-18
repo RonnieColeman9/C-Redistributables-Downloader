@@ -64,3 +64,11 @@ Many games, tools, and development environments require specific C++ runtimes. T
 
 Created by **[RonnieColeman9](https://github.com/RonnieColeman9)**  
 Feel free to fork, modify, and contribute!
+
+---
+
+# Ignore, its just tags
+windows batch-script cpp c++ vcredist microsoft-visual-c++ redistributables installer automation silent-install setup windows-utilities development-tools system-setup dependency-installer
+
+## 🔎 Keywords
+windows batch-script cpp c++ vcredist microsoft-visual-c++ redistributables installer automation silent-install setup windows-utilities development-tools system-setup dependency-installer
