@@ -62,12 +62,5 @@ Many games, tools, and development environments require specific C++ runtimes. T
 
 ### 🤝 Credits
 
-Created with ❤️ by **[RonnieColeman9](https://github.com/RonnieColeman9)**  
+Created by **[RonnieColeman9](https://github.com/RonnieColeman9)**  
 Feel free to fork, modify, and contribute!
-
----
-
-### 📎 License
-
-This project is open-source and released under the [MIT License](LICENSE).
-
